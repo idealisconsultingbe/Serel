@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <record id="serel_tag_product_view_form" model="ir.ui.view">
+            <field name="name">serel.tag.product.view.form</field>
+            <field name="model">tag.product.template</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Tag Product" name="serel_tag_product_form">
+                    <sheet>
+                        <field name="name"/>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="serel_tag_product_view_tree" model="ir.ui.view">
+            <field name="name">serel.tag.product.view.tree</field>
+            <field name="model">tag.product.template</field>
+            <field name="arch" type="xml">
+                <tree string="Tag Products" name="serel_tag_product_tree">
+                    <field name="sequence" widget="handle"/>
+                    <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="serel_tag_product_action" model="ir.actions.act_window">
+            <field name="name">Tags For The Products</field>
+            <field name="res_model">tag.product.template</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="menu_serel_tag_product" sequence="15" parent="sale.prod_config_main" action="serel_product_advised_price.serel_tag_product_action"/>
+    </data>
+</odoo>
