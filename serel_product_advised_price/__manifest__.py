@@ -7,7 +7,7 @@
     'summary': 'Add fields in the Product model',
     'author': 'Idealis Consulting',
     'website': 'http://www.idealisconsulting.com',
-    'depends': ['base', 'product', 'sale', 'stock', 'mrp'],
+    'depends': ['base', 'product', 'sale'],
     'price': 0,
     'currency': 'EUR',
     'data': [
