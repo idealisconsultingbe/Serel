@@ -42,16 +42,17 @@ class SerelProductProduct(models.Model):
 
     @api.model
     def create(self, vals):
+        # self.ensure_one()
         product_tmpl_configurator = self.env['product.template'].search([('product_add_mode', '=', 'configurator'),
                                                                          ('id', '=', vals['product_tmpl_id'])])
         if vals['product_tmpl_id'] in product_tmpl_configurator.ids:
             ref = product_tmpl_configurator.default_code
-            res = super(SerelProductProduct, self).create(vals)
-            res.default_code = ref + self.env['ir.sequence'].next_by_code('product.product')
+            vals['default_code'] = ref + self.env['ir.sequence'].next_by_code('product.product')
+            # res.default_code = ref + self.env['ir.sequence'].next_by_code('product.product')
             product_tmpl_configurator.default_code = ref
-        else:
-            res = super(SerelProductProduct, self).create(vals)
-        return res
+        # else:
+            # res = super(SerelProductProduct, self).create(vals)
+        return super(SerelProductProduct, self).create(vals)
 
     @api.depends('standard_price')
     def get_advised_price(self):
