@@ -14,7 +14,6 @@ class SerelProductTmpl(models.Model):
                                        string='Tags')
     advised_sale_price = fields.Float(string='Advised Sale Price', digits='Product Price', compute='get_advised_price',
                                       store=True)
-    default_code = fields.Char(required=True)
 
     _sql_constraints = [
         ('unique_default_code', 'unique(default_code)', 'This reference already exists!')
@@ -64,7 +63,8 @@ class SerelProductTmpl(models.Model):
         """
         for product_tmpl in self:
             advised_price_pricelist = self.env['product.pricelist'].search([('advised_pricelist', '=', True)])
-            if advised_price_pricelist:
+            # product_tmpl_ids in the if-condition to avoid an error while creating a product
+            if advised_price_pricelist and product_tmpl.ids:
                 product_tmpl.advised_sale_price = advised_price_pricelist.with_context(uom=product_tmpl.uom_id.id).get_product_price(product_tmpl, 1.0, False)
                 if len(product_tmpl.product_variant_ids.ids) == 1:
                     product_tmpl.product_variant_ids.get_advised_price()
@@ -134,7 +134,6 @@ class SerelProductProduct(models.Model):
                                        related="product_tmpl_id.tag_product_ids", string='Tags', readonly=True)
     pr_advised_sale_price = fields.Float(string='Pr Advised Sale Price', digits='Product Price',
                                          compute='get_advised_price', store=True)
-    default_code = fields.Char(required=True)
 
     _sql_constraints = [
         ('unique_default_code', 'unique(default_code)', 'This reference already exists!')

@@ -10,8 +10,11 @@
                 <field name="barcode" position="before">
                     <field name="tag_product_ids" widget="many2many_tags"/>
                 </field>
+                <xpath expr="//field[@name='default_code']" position="before">
+                    <field name="id" invisible="1"/>
+                </xpath>
                 <xpath expr="//field[@name='default_code']" position="attributes">
-                    <attribute name="attrs">{'invisible':False}</attribute>
+                    <attribute name="attrs">{'invisible':False, 'required': [('id', '!=', False)]}</attribute>
                 </xpath>
             </field>
         </record>
@@ -69,6 +72,12 @@
                     <attribute name="name">pr_advised_sale_price</attribute>
                     <attribute name="string">Advised Sale Price</attribute>
                 </field>
+                <xpath expr="//field[@name='default_code']" position="before">
+                    <field name="id" invisible="1"/>
+                </xpath>
+                <xpath expr="//field[@name='default_code']" position="attributes">
+                    <attribute name="attrs">{'required': [('id', '!=', False)]}</attribute>
+                </xpath>
             </field>
         </record>
 
