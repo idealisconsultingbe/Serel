@@ -1,2 +1,32 @@
-
+.hg/
 *.pyc
+
+# For buildout
+.installed.cfg
+/bin/
+buildout.cfg
+/develop-eggs/
+/develop-src/
+/downloads/
+/eggs/
+/etc/
+/parts/
+/include/
+/lib/
+/py36/
+share/
+/upgrade.py
+/pip-selfcheck.json
+/.idea/
+
+# For buildout development
+/a.r.odoo/
+/setuptools-*.zip
+# project specific
+
+# pyenv
+.python-version
+
+buildout.cfg
+
+

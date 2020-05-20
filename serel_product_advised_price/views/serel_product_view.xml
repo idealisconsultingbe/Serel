@@ -10,6 +10,9 @@
                 <field name="barcode" position="before">
                     <field name="tag_product_ids" widget="many2many_tags"/>
                 </field>
+                <xpath expr="//field[@name='default_code']" position="attributes">
+                    <attribute name="attrs">{'invisible':False}</attribute>
+                </xpath>
             </field>
         </record>
 
@@ -49,7 +52,7 @@
             <field name="state">code</field>
             <field name="code">
                 if records:
-                    records.get_advised_price()
+                records.get_advised_price()
             </field>
         </record>
 
@@ -88,7 +91,7 @@
             <field name="state">code</field>
             <field name="code">
                 if records:
-                    records.get_advised_price()
+                records.get_advised_price()
             </field>
         </record>
     </data>
