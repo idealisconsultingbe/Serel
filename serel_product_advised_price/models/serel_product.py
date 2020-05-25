@@ -14,6 +14,7 @@ class SerelProductTmpl(models.Model):
                                        string='Tags')
     advised_sale_price = fields.Float(string='Advised Sale Price', digits='Product Price', compute='get_advised_price',
                                       store=True)
+    sequence = fields.Integer(string='Sequence')
 
     _sql_constraints = [
         ('unique_default_code', 'unique(default_code)', 'This reference already exists!')
@@ -113,10 +114,11 @@ class SerelProductTmpl(models.Model):
                 _logger.warning('The user #%s tried to create an invalid variant for the product %s.' % (self.env.user.id, self.id))
             return Product
 
+        self.sequence += 1
         return Product.sudo().create({
             'product_tmpl_id': self.id,
             'product_template_attribute_value_ids': [(6, 0, combination._without_no_variant_attributes().ids),],
-            'default_code': self.default_code + self.env['ir.sequence'].next_by_code('product.product')
+            'default_code': self.default_code + (str(self.sequence)).zfill(4)
         })
 
     @api.depends('product_variant_ids', 'product_variant_ids.default_code')
