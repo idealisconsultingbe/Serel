@@ -14,7 +14,7 @@ class SerelProductTmpl(models.Model):
                                        string='Tags')
     advised_sale_price = fields.Float(string='Advised Sale Price', digits='Product Price', compute='get_advised_price',
                                       store=True)
-    sequence = fields.Integer(string='Sequence')
+    sequence = fields.Integer(string='Sequence', default=0)
 
     _sql_constraints = [
         ('unique_default_code', 'unique(default_code)', 'This reference already exists!')
