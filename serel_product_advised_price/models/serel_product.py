@@ -15,6 +15,8 @@ class SerelProductTmpl(models.Model):
     advised_sale_price = fields.Float(string='Advised Sale Price', digits='Product Price', compute='get_advised_price',
                                       store=True)
     sequence = fields.Integer(string='Sequence', default=0)
+    product_tmpl_sequence = fields.Integer(string='Digits for Variant Sequence', default=0,
+                                           help='Number of Digits for the generated Product Variant Reference')
 
     _sql_constraints = [
         ('unique_default_code', 'unique(default_code)', 'This reference already exists!')
@@ -118,7 +120,7 @@ class SerelProductTmpl(models.Model):
         return Product.sudo().create({
             'product_tmpl_id': self.id,
             'product_template_attribute_value_ids': [(6, 0, combination._without_no_variant_attributes().ids),],
-            'default_code': self.default_code + (str(self.sequence)).zfill(4)
+            'default_code': self.default_code + (str(self.sequence)).zfill(self.product_tmpl_sequence)
         })
 
     @api.depends('product_variant_ids', 'product_variant_ids.default_code')

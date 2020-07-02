@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_saleorder_document_inherit" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//td[@name='td_quantity']" position="replace">
+            <td name="td_quantity" class="text-right">
+                <span t-esc="line.qty_integer or line.product_uom_qty"/>
+            </td>
+        </xpath>
+        <xpath expr="//div[@id='informations']" position="replace">
+            <div class="row mt32 mb32" id="informations">
+                <div t-if="doc.client_order_ref" class="col-auto mw-100 mb-2">
+                    <strong>Your Reference:</strong>
+                    <p class="m-0" t-field="doc.client_order_ref"/>
+                </div>
+                <div t-if="doc.date_order and doc.state not in ['draft','sent']" class="col-3">
+                    <strong>Order Date:</strong>
+                    <p class="m-0" t-field="doc.date_order"/>
+                </div>
+                <div t-if="doc.date_order and doc.state in ['draft','sent']" class="col-3">
+                    <strong>Quotation Date:</strong>
+                    <p class="m-0" t-field="doc.date_order" t-options="{&quot;widget&quot;: &quot;date&quot;}"/>
+                </div>
+                <div t-if="doc.validity_date and doc.state in ['draft', 'sent']" class="col-3" name="expiration_date">
+                    <strong>Expiration:</strong>
+                    <p class="m-0" t-field="doc.validity_date"/>
+                </div>
+                <div t-if="doc.user_id.name" class="col-3">
+                    <strong>Salesperson:</strong>
+                    <p class="m-0" t-field="doc.user_id"/>
+                </div>
+            </div>
+        </xpath>
+        <xpath expr="//td[@name='td_subtotal']" position="replace">
+            <td t-if="line.show_in_report" name="td_subtotal" class="text-right">
+                <span t-field="line.price_subtotal" groups="account.group_show_line_subtotals_tax_excluded"/>
+                <span t-field="line.price_total" groups="account.group_show_line_subtotals_tax_included"/>
+            </td>
+        </xpath>
+    </template>
+
+</odoo>

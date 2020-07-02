@@ -7,7 +7,8 @@
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
            <xpath expr="//field[@name='order_line']/tree//field[@name='price_unit']" position="after">
-                <field name="advised_sale_price" class="oe_inline" widget='monetary' options="{'currency_field': 'currency_id', 'field_digits': True}" groups="base.group_user"/>
+               <field name="advised_sale_price" class="oe_inline" widget='monetary' options="{'currency_field': 'currency_id', 'field_digits': True}" groups="base.group_user"/>
+               <field name="show_in_report" optional="show"/>
             </xpath>
         </field>
     </record>

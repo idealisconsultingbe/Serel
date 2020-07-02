@@ -13,9 +13,13 @@
                 <xpath expr="//field[@name='default_code']" position="before">
                     <field name="id" invisible="1"/>
                 </xpath>
+                <xpath expr="//field[@name='default_code']" position="after">
+                    <field name="product_tmpl_sequence"/>
+                </xpath>
                 <xpath expr="//field[@name='default_code']" position="attributes">
                     <attribute name="attrs">{'invisible':False, 'required': [('id', '!=', False)]}</attribute>
                 </xpath>
+
             </field>
         </record>
 
