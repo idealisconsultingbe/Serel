@@ -43,8 +43,8 @@
             </td>
         </xpath>
         <xpath expr="//td[@name='td_priceunit']" position="replace">
-            <td t-if="line.show_in_report" name="td_priceunit" class="text-right">
-                <span t-field="line.price_unit"/>
+            <td name="td_priceunit" class="text-right">
+                <span t-if="line.show_in_report" t-field="line.price_unit"/>
             </td>
         </xpath>
     </template>

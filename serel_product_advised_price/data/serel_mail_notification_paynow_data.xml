@@ -41,6 +41,7 @@
                                         <t t-esc="access_name"/>
                                     </a>
                                 </div>
+                                <!-- Best regards has been deleted -->
                                 <t t-if="record.user_id and not record.env.user._is_superuser()">
                                     <div>&amp;nbsp;</div>
                                     <div t-if="record.user_id.sudo().signature" style="font-size: 13px;">
