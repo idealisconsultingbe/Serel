@@ -38,7 +38,7 @@
             </td>
         </xpath>
         <xpath expr="//td[@name='td_taxes']" position="replace">
-            <td t-if="line.show_in_report" name="td_taxes" class="text-right">
+            <td t-if="line.show_in_report_section" name="td_taxes" class="text-right">
                 <span t-esc="', '.join(map(lambda x: (x.description or x.name), line.tax_id))"/>
             </td>
         </xpath>
