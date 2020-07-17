@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="report_delivery_document_inherit" inherit_id="stock.report_delivery_document">
+        <xpath expr="//table[@name='stock_move_table']" position="replace"/>
+        <xpath expr="//table[@name='stock_move_line_table']" position="attributes">
+            <attribute name="t-if">"o.move_line_ids"</attribute>
+            <attribute name="t-value">"o.move_lines.filtered(lambda x: x.product_uom_qty)"</attribute>
+        </xpath>
+        <xpath expr="//th[@name='th_sml_quantity']" position="before">
+            <th name="th_sml_dest_package"><strong>Destination Package</strong></th>
+        </xpath>
+        <xpath expr="//span[@t-field='move_line.qty_done']/.." position="before">
+            <td>
+                <span t-field="move_line.result_package_id.name"/>
+            </td>
+        </xpath>
+        <xpath expr="//span[@t-field='move_line.product_id']/.." position="replace">
+            <td>
+                <span t-field="move_line.description_picking"/>
+                <p t-if="not move_line.description_picking">
+                    <span t-field="move_line.product_id.name"/>
+                </p>
+            </td>
+        </xpath>
+    </template>
+</odoo>

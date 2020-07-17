@@ -14,11 +14,14 @@
         'data/serel_product_sequence.xml',
         'data/serel_mail_notification_paynow_data.xml',
         'report/serel_report_saleorder_document_report.xml',
+        'report/serel_delivery_document_report.xml',
+        'report/serel_invoice_document_report.xml',
         'security/ir.model.access.csv',
         'views/serel_product_pricelist_view.xml',
         'views/serel_product_view.xml',
         'views/serel_tag_product_view.xml',
         'views/serel_sale_order_view.xml',
+        'views/serel_account_invoice_view.xml'
     ],
 
     'installable': True,
