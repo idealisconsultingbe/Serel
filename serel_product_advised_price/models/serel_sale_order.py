@@ -9,7 +9,6 @@ class SerelSaleOrderLine(models.Model):
     advised_sale_price = fields.Float('Advised Sale Price', digits='Product Price',
                                       related='product_id.pr_advised_sale_price')
     show_in_report = fields.Boolean(string='Show in Report', default=True)
-    # show_in_report_section = fields.Boolean(string='Show in Report Section')
 
     qty_integer = fields.Integer(string='Quantity in Integer', compute='_compute_qty_integer', store=True)
 
@@ -20,11 +19,16 @@ class SerelSaleOrderLine(models.Model):
             if line.qty_integer != line.product_uom_qty:
                 line.qty_integer = False
 
-    # @api.onchange('show_in_report')
-    # def _onchange_show_in_report_section(self):
-    #     for line in self:
-    #         for so_line in line.order_id.order_line:
-    #             if so_line.display_type == 'line_section' and so_line.display_name == line.display_name:
-    #                 line.show_in_report_section = so_line.show_in_report
-    #             else:
-    #                 line.show_in_report_section = True  # TO CHANGE
+    def _action_launch_stock_rule(self, previous_product_uom_qty=False):
+        res = super(SerelSaleOrderLine, self)._action_launch_stock_rule(previous_product_uom_qty=previous_product_uom_qty)
+        orders = list(set(x.order_id for x in self))
+        for order in orders:
+            reassign = order.picking_ids.filtered(lambda x: x.state=='confirmed' or (x.state in ['waiting', 'assigned'] and not x.printed))
+            if reassign:
+                reassign.action_assign()
+                i = 0
+                for line in reassign.move_lines:
+                    line.description_picking = self[i].name
+                    i += 1
+        return res
+

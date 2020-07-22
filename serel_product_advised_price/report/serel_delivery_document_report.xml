@@ -17,8 +17,8 @@
         </xpath>
         <xpath expr="//span[@t-field='move_line.product_id']/.." position="replace">
             <td>
-                <span t-field="move_line.description_picking"/>
-                <p t-if="not move_line.description_picking">
+                <span t-field="move_line.move_id.description_picking"/>
+                <p t-if="not move_line.move_id.description_picking">
                     <span t-field="move_line.product_id.name"/>
                 </p>
             </td>
