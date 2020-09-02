@@ -26,9 +26,10 @@ class SerelSaleOrderLine(models.Model):
             reassign = order.picking_ids.filtered(lambda x: x.state=='confirmed' or (x.state in ['waiting', 'assigned'] and not x.printed))
             if reassign:
                 reassign.action_assign()
+                move_lines = reassign.move_lines.filtered(lambda x: x.bom_line_id.bom_id.type != 'phantom')
                 so_lines = self.filtered(lambda x: not x.display_type)
                 i = 0
-                for line in reassign.move_lines:
+                for line in move_lines:
                     line.description_picking = so_lines[i].name
                     i += 1
         return res
