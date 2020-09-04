@@ -2,7 +2,7 @@
 <odoo>
 
     <template id="report_delivery_document_inherit" inherit_id="stock.report_delivery_document">
-        <xpath expr="//table[@name='stock_move_table']" position="replace"/>
+<!--        <xpath expr="//table[@name='stock_move_table']" position="replace"/>-->
         <xpath expr="//table[@name='stock_move_line_table']" position="attributes">
             <attribute name="t-if">"o.move_line_ids"</attribute>
             <attribute name="t-value">"o.move_lines.filtered(lambda x: x.product_uom_qty)"</attribute>

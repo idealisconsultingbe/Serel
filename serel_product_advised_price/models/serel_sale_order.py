@@ -34,3 +34,9 @@ class SerelSaleOrderLine(models.Model):
                     i += 1
         return res
 
+
+class SaleOrder(models.Model):
+    _inherit = 'sale.order'
+
+    tag_ids = fields.Many2many('res.partner.category', column1='order_id', column2='category_id', string='Tags')
+
