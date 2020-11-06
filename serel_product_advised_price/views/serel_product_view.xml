@@ -15,6 +15,7 @@
                 </xpath>
                 <xpath expr="//field[@name='default_code']" position="after">
                     <field name="product_tmpl_sequence"/>
+                    <field name="sticker_label"/>
                 </xpath>
                 <xpath expr="//field[@name='default_code']" position="attributes">
                     <attribute name="attrs">{'invisible':False, 'required': [('id', '!=', False)]}</attribute>
@@ -71,6 +72,7 @@
             <field name="arch" type="xml">
                 <field name="barcode" position="before">
                     <field name="tag_product_ids" widget="many2many_tags"/>
+                    <field name="sticker_label"/>
                 </field>
                 <field name="advised_sale_price" position="attributes">
                     <attribute name="name">pr_advised_sale_price</attribute>

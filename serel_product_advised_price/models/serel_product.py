@@ -17,6 +17,8 @@ class SerelProductTmpl(models.Model):
     sequence = fields.Integer(string='Sequence', default=0)
     product_tmpl_sequence = fields.Integer(string='Digits for Variant Sequence', default=0,
                                            help='Number of Digits for the generated Product Variant Reference')
+    default_code = fields.Char('Internal Reference', compute=False, inverse=False, store=True)
+    sticker_label = fields.Char(string='Sticker Label', store=True, readonly=False)
 
     _sql_constraints = [
         ('unique_default_code', 'unique(default_code)', 'This reference already exists!')
@@ -45,6 +47,8 @@ class SerelProductTmpl(models.Model):
             # Please do forward port
             if vals.get('packaging_ids'):
                 related_vals['packaging_ids'] = vals['packaging_ids']
+            if vals.get('name'):
+                related_vals['sticker_label'] = vals['name']
             if related_vals:
                 template.write(related_vals)
 
@@ -120,15 +124,8 @@ class SerelProductTmpl(models.Model):
         return Product.sudo().create({
             'product_tmpl_id': self.id,
             'product_template_attribute_value_ids': [(6, 0, combination._without_no_variant_attributes().ids),],
-            'default_code': self.default_code + (str(self.sequence)).zfill(self.product_tmpl_sequence)
+            'default_code': self.default_code + (str(self.sequence)).zfill(self.product_tmpl_sequence),
         })
-
-    @api.depends('product_variant_ids', 'product_variant_ids.default_code')
-    def _compute_default_code(self):
-        return False
-
-    def _set_default_code(self):
-        return False
 
 
 class SerelProductProduct(models.Model):
@@ -138,6 +135,7 @@ class SerelProductProduct(models.Model):
                                        related="product_tmpl_id.tag_product_ids", string='Tags', readonly=True)
     pr_advised_sale_price = fields.Float(string='Pr Advised Sale Price', digits='Product Price',
                                          compute='get_advised_price', store=True)
+    sticker_label = fields.Char(string='Sticker Label', compute='_compute_sticker_label', store=True, readonly=False)
 
     _sql_constraints = [
         ('unique_default_code', 'unique(default_code)', 'This reference already exists!')
@@ -155,6 +153,11 @@ class SerelProductProduct(models.Model):
                     uom=product_product.uom_id.id).get_product_price(product_product, 1.0, False)
             else:
                 product_product.pr_advised_sale_price = 0
+
+    @api.depends('name')
+    def _compute_sticker_label(self):
+        for product in self:
+            product.sticker_label = product.name
 
     def get_product_multiline_description_sale(self):
         """ Compute a multiline description of this product, in the context of sales

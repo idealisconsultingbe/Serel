@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="serel_stickers_format_2" model="report.paperformat">
+            <field name="name">Serel Stickers Format 2</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="page_height">25</field>
+            <field name="page_width">9</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">1</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">0</field>
+            <field name="margin_right">0</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">0</field>
+            <field name="dpi">100</field>
+        </record>
+
+        <template id="serel_template_sticker_2">
+            <div style="width:100%; display: block; text-align: left; padding:0px;">
+                <table style="text-align: left; width: 100%;">
+                    <tr>
+<!--                        <tr>-->
+<!--                            <td style="padding-left: 5px;" >-->
+<!--                                <img height="100" width="100" src="/serel_product_advised_price/static/img/sigle_black.jpg" />-->
+<!--                            </td>-->
+<!--                        </tr>-->
+                        <tr>
+                            <td style="text-align: left; vertical-align: bottom;" >
+                                <span style="font-size: 8; line-height: 3px;">Article:<strong t-field="product.sticker_label" /></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left; vertical-align: bottom;" >
+                                <span style="font-size: 8; line-height: 3px;">REF:<strong t-field="product.default_code" /></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left; vertical-align: bottom;" >
+                                <span style="font-size: 8; line-height: 2px;">SN:</span>
+                            </td>
+                        </tr>
+                    </tr>
+                </table>
+            </div>
+        </template>
+
+        <template id="serel_product_template_sticker_2">
+            <t t-call="web.html_container">
+                <div class="page">
+                    <t t-foreach="docs" t-as="template">
+                        <t t-foreach="template.product_variant_ids" t-as="product">
+                            <t t-call="serel_product_advised_price.serel_template_sticker_2">
+                                <t t-set="product" t-value="product"/>
+                            </t>
+                        </t>
+                    </t>
+                </div>
+            </t>
+        </template>
+
+        <template id="serel_product_sticker_2">
+            <t t-call="web.html_container">
+                <div class="page">
+                    <t t-foreach="docs" t-as="product">
+                        <t t-call="serel_product_advised_price.serel_template_sticker_2">
+                            <t t-set="product" t-value="product"/>
+                        </t>
+                    </t>
+                </div>
+            </t>
+        </template>
+
+        <report
+                id="product_template_stickers_report_2"
+                string="Stickers 2"
+                model="product.template"
+                report_type="qweb-pdf"
+                file="serel_product_advised_price.serel_product_template_sticker_2"
+                name="serel_product_advised_price.serel_product_template_sticker_2"
+                paperformat="serel_product_advised_price.serel_stickers_format_2"
+        />
+
+        <report
+                id="product_product_stickers_report_2"
+                string="Stickers 2"
+                model="product.product"
+                report_type="qweb-pdf"
+                file="serel_product_advised_price.serel_product_sticker_2"
+                name="serel_product_advised_price.serel_product_sticker_2"
+                paperformat="serel_product_advised_price.serel_stickers_format_2"
+        />
+
+    </data>
+</odoo>

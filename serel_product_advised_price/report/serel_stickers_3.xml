@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="serel_stickers_format_3" model="report.paperformat">
+            <field name="name">Serel Stickers Format 3</field>
+            <field name="default" eval="True"/>
+            <field name="format">custom</field>
+            <field name="page_height">48</field>
+            <field name="page_width">19</field>
+            <field name="orientation">Landscape</field>
+            <field name="margin_top">2</field>
+            <field name="margin_bottom">0</field>
+            <field name="margin_left">2</field>
+            <field name="margin_right">2</field>
+            <field name="header_line" eval="False"/>
+            <field name="header_spacing">0</field>
+            <field name="dpi">100</field>
+        </record>
+
+        <template id="serel_template_sticker_3">
+            <div style="width:100%; display: block; text-align: left; padding:4px;">
+                <table style="text-align: left; width: 100%;">
+                    <tr>
+                        <tr>
+                            <td style="text-align: center; vertical-align: bottom;" >
+                                <span style="font-size: 10; line-height: 6px;"><strong t-field="product.name" /></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left; vertical-align: bottom;" >
+                                <span style="font-size: 10; line-height: 6px;">Reference:<strong t-field="product.default_code" /></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: right; vertical-align: bottom;" >
+                                <span style="font-size: 10; line-height: 4px;">SN:</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: left; vertical-align: bottom;" >
+                                <span style="font-size: 8; line-height: 4px;">Made in BELGIUM</span>
+                            </td>
+                        </tr>
+                    </tr>
+                </table>
+            </div>
+        </template>
+
+        <template id="serel_product_template_sticker_3">
+            <t t-call="web.html_container">
+                <div class="page">
+                    <t t-foreach="docs" t-as="template">
+                        <t t-foreach="template.product_variant_ids" t-as="product">
+                            <t t-call="serel_product_advised_price.serel_template_sticker_3">
+                                <t t-set="product" t-value="product"/>
+                            </t>
+                        </t>
+                    </t>
+                </div>
+            </t>
+        </template>
+
+        <template id="serel_product_sticker_3">
+            <t t-call="web.html_container">
+                <div class="page">
+                    <t t-foreach="docs" t-as="product">
+                        <t t-call="serel_product_advised_price.serel_template_sticker_3">
+                            <t t-set="product" t-value="product"/>
+                        </t>
+                    </t>
+                </div>
+            </t>
+        </template>
+
+        <report
+                id="product_template_stickers_report_3"
+                string="Stickers 3"
+                model="product.template"
+                report_type="qweb-pdf"
+                file="serel_product_advised_price.serel_product_template_sticker_3"
+                name="serel_product_advised_price.serel_product_template_sticker_3"
+                paperformat="serel_product_advised_price.serel_stickers_format_3"
+        />
+
+        <report
+                id="product_product_stickers_report_3"
+                string="Stickers 3"
+                model="product.product"
+                report_type="qweb-pdf"
+                file="serel_product_advised_price.serel_product_sticker_3"
+                name="serel_product_advised_price.serel_product_sticker_3"
+                paperformat="serel_product_advised_price.serel_stickers_format_3"
+        />
+
+    </data>
+</odoo>
