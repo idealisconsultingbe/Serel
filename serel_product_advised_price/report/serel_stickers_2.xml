@@ -21,11 +21,9 @@
             <div style="width:100%; display: block; text-align: left; padding:0px;">
                 <table style="text-align: left; width: 100%;">
                     <tr>
-<!--                        <tr>-->
-<!--                            <td style="padding-left: 5px;" >-->
-<!--                                <img height="100" width="100" src="/serel_product_advised_price/static/img/sigle_black.jpg" />-->
-<!--                            </td>-->
-<!--                        </tr>-->
+                        <td style="padding-left: 5px;" width="25%">
+                            <img src="/serel_product_advised_price/static/src/img/sigle_black.jpg" style="max-height: 2rem;" alt="Serel Logo"/>
+                        </td>
                         <tr>
                             <td style="text-align: left; vertical-align: bottom;" >
                                 <span style="font-size: 8; line-height: 3px;">Article:<strong t-field="product.sticker_label" /></span>
