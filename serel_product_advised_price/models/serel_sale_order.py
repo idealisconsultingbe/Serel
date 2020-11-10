@@ -27,11 +27,12 @@ class SerelSaleOrderLine(models.Model):
             if reassign:
                 reassign.action_assign()
                 move_lines = reassign.move_lines.filtered(lambda x: x.bom_line_id.bom_id.type != 'phantom')
-                so_lines = self.filtered(lambda x: not x.display_type)
-                i = 0
-                for line in move_lines:
-                    line.description_picking = so_lines[i].name
-                    i += 1
+                so_lines = self.filtered(lambda x: not x.display_type and x.product_id.type != 'service')
+                if so_lines:
+                    i = 0
+                    for line in move_lines:
+                        line.description_picking = so_lines[i].name
+                        i += 1
         return res
 
 
