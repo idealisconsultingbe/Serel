@@ -8,7 +8,7 @@
             <field name="page_height">25</field>
             <field name="page_width">9</field>
             <field name="orientation">Landscape</field>
-            <field name="margin_top">1</field>
+            <field name="margin_top">0</field>
             <field name="margin_bottom">0</field>
             <field name="margin_left">0</field>
             <field name="margin_right">0</field>
@@ -18,17 +18,15 @@
         </record>
 
         <template id="serel_template_sticker_2">
-            <div style="width:100%; display: block; text-align: left; padding:0px;">
-                <table style="text-align: left; width: 100%;">
+            <div>
+                <table>
                     <tr>
-                        <td style="padding-left: 5px;" width="25%">
-                            <img src="/serel_product_advised_price/static/src/img/sigle_black.jpg" style="max-height: 2rem;" alt="Serel Logo"/>
+                        <td style="text-align: left;" >
+                            <div>
+                                <img t-att-src="product.get_url_img()" height="10px" alt="Serel Logo" class="d-block mx-auto"/>
+                                <span style="font-size: 8; line-height: 1px;">Article:<strong t-field="product.sticker_label" /></span>
+                            </div>
                         </td>
-                        <tr>
-                            <td style="text-align: left; vertical-align: bottom;" >
-                                <span style="font-size: 8; line-height: 3px;">Article:<strong t-field="product.sticker_label" /></span>
-                            </td>
-                        </tr>
                         <tr>
                             <td style="text-align: left; vertical-align: bottom;" >
                                 <span style="font-size: 8; line-height: 3px;">REF:<strong t-field="product.default_code" /></span>
@@ -81,14 +79,34 @@
         />
 
         <report
-                id="product_product_stickers_report_2"
+                id="product_template_stickers_report_2"
                 string="Stickers 2"
-                model="product.product"
+                model="product.template"
                 report_type="qweb-pdf"
-                file="serel_product_advised_price.serel_product_sticker_2"
-                name="serel_product_advised_price.serel_product_sticker_2"
+                file="serel_product_advised_price.serel_product_template_sticker_2"
+                name="serel_product_advised_price.serel_product_template_sticker_2"
                 paperformat="serel_product_advised_price.serel_stickers_format_2"
         />
+
+<!--        <report-->
+<!--                id="product_product_stickers_report_2_zpl"-->
+<!--                string="Stickers 2 (ZPL)"-->
+<!--                model="product.product"-->
+<!--                report_type="qweb-pdf"-->
+<!--                file="serel_product_advised_price.serel_product_sticker_2_zpl"-->
+<!--                name="serel_product_advised_price.serel_product_sticker_2_zpl"-->
+<!--                paperformat="serel_product_advised_price.serel_stickers_format_2"-->
+<!--        />-->
+
+<!--        <report-->
+<!--                id="product_product_stickers_report_2"-->
+<!--                string="Stickers 2 (ZPL)"-->
+<!--                model="product.product"-->
+<!--                report_type="qweb-pdf"-->
+<!--                file="serel_product_advised_price.serel_product_sticker_2_zpl"-->
+<!--                name="serel_product_advised_price.serel_product_sticker_2_zpl"-->
+<!--                paperformat="serel_product_advised_price.serel_stickers_format_2"-->
+<!--        />-->
 
     </data>
 </odoo>

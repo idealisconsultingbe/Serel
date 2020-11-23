@@ -18,7 +18,7 @@ class SerelProductTmpl(models.Model):
     product_tmpl_sequence = fields.Integer(string='Digits for Variant Sequence', default=0,
                                            help='Number of Digits for the generated Product Variant Reference')
     default_code = fields.Char('Internal Reference', compute=False, inverse=False, store=True)
-    sticker_label = fields.Char(string='Sticker Label', store=True, readonly=False)
+    sticker_label = fields.Char(string='Sticker Label', store=True, readonly=False, size=10)
 
     _sql_constraints = [
         ('unique_default_code', 'unique(default_code)', 'This reference already exists!')
@@ -169,6 +169,12 @@ class SerelProductProduct(models.Model):
             name = self.description_sale
 
         return name
+
+    def get_url_img(self):
+        self.ensure_one()
+        base_url = self.env['ir.config_parameter'].sudo().get_param('report.url') or self.env['ir.config_parameter'].sudo().get_param('web.base.url')
+        url = base_url + '/serel_core/static/src/img/sigleblack.jpg'
+        return url
 
 
 class SerelTagProduct(models.Model):

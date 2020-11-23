@@ -22,7 +22,8 @@
                 <table style="text-align: left; width: 100%;">
                     <tr>
                         <tr>
-                            <td style="text-align: center; vertical-align: bottom;" >
+                            <td style="text-align: left;">
+                                <img t-att-src="product.get_url_img()" height="20px" alt="Serel Logo" class="d-block mx-auto"/>
                                 <span style="font-size: 10; line-height: 6px;"><strong t-field="product.name" /></span>
                             </td>
                         </tr>

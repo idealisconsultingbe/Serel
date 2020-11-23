@@ -46,6 +46,37 @@
             </div>
         </template>
 
+        <template id="serel_template_sticker_1_zpl">
+            <div class="raw">
+                <t>
+                    ^XA
+
+                    ^FX Top section with product reference.
+                    ^CF0,20
+                    ^FO210,20^FDReference:^FS
+                    ^FO370,20^FD<t t-esc="product.default_code"/>^FS
+                    ^FO0,80^GB700,1,3^FS
+
+                    ^FX Second section with location.
+                    ^CF0,20
+                    ^FO210,90^FDLocation:^FS
+                    ^FO370,90^FD<t t-esc="product.property_stock_inventory.name"/>^FS
+                    ^FO0,140^GB490,1,3^FS
+
+                    ^FX Third section with the product name.
+                    ^CF0,20
+                    ^FO210,160^FDArticle:^FS
+                    ^FO370,160^FD<t t-esc="product.sticker_label if product.sticker_label else ''"/>^FS
+                    ^FO0,220^GB700,1,3^FS
+
+                    ^FX Fourth section with Lot/SN.
+                    ^CF0,20
+                    ^FO210,160^FDLot/SN:^FS
+
+                </t>
+            </div>
+        </template>
+
         <template id="serel_product_template_sticker_1">
             <t t-call="web.html_container">
                 <div class="page">
@@ -72,6 +103,32 @@
             </t>
         </template>
 
+        <template id="serel_product_template_sticker_1_zpl">
+            <t t-call="web.html_container">
+                <div class="page">
+                    <t t-foreach="docs" t-as="template">
+                        <t t-foreach="template.product_variant_ids" t-as="product">
+                            <t t-call="serel_product_advised_price.serel_template_sticker_1_zpl">
+                                <t t-set="product" t-value="product"/>
+                            </t>
+                        </t>
+                    </t>
+                </div>
+            </t>
+        </template>
+
+        <template id="serel_product_sticker_1_zpl">
+            <t t-call="web.html_container">
+                <div class="page">
+                    <t t-foreach="docs" t-as="product">
+                        <t t-call="serel_product_advised_price.serel_template_sticker_1_zpl">
+                            <t t-set="product" t-value="product"/>
+                        </t>
+                    </t>
+                </div>
+            </t>
+        </template>
+
         <report
                 id="product_template_stickers_report_1"
                 string="Stickers 1"
@@ -89,6 +146,26 @@
                 report_type="qweb-pdf"
                 file="serel_product_advised_price.serel_product_sticker_1"
                 name="serel_product_advised_price.serel_product_sticker_1"
+                paperformat="serel_product_advised_price.serel_stickers_format_1"
+        />
+
+        <report
+                id="product_template_stickers_report_1_zpl"
+                string="Stickers 1 (ZPL)"
+                model="product.template"
+                report_type="qweb-pdf"
+                file="serel_product_advised_price.serel_product_template_sticker_1_zpl"
+                name="serel_product_advised_price.serel_product_template_sticker_1_zpl"
+                paperformat="serel_product_advised_price.serel_stickers_format_1"
+        />
+
+        <report
+                id="product_product_stickers_report_1_zpl"
+                string="Stickers 1 (ZPL)"
+                model="product.product"
+                report_type="qweb-pdf"
+                file="serel_product_advised_price.serel_product_sticker_1_zpl"
+                name="serel_product_advised_price.serel_product_sticker_1_zpl"
                 paperformat="serel_product_advised_price.serel_stickers_format_1"
         />
 
