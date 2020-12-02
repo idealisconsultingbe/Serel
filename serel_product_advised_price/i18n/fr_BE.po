@@ -1,0 +1,392 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* serel_product_advised_price
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-02 19:19+0000\n"
+"PO-Revision-Date: 2020-12-02 20:20+0100\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: fr_BE\n"
+"X-Generator: Poedit 2.4.2\n"
+
+#. module: serel_product_advised_price
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.serel_template_sticker_3
+msgid "<span style=\"font-size: 10; line-height: 4px;\">SN:</span>"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.serel_template_sticker_1
+msgid "<span style=\"font-size: 14; line-height: 8px;\">Lot/SN:</span>"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.serel_template_sticker_2
+msgid "<span style=\"font-size: 8; line-height: 2px;\">SN:</span>"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.serel_template_sticker_3
+msgid "<span style=\"font-size: 8; line-height: 4px;\">Made in BELGIUM</span>"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.report_saleorder_document_inherit
+msgid "<strong>Delivery Date:</strong>"
+msgstr "<strong>Date de livraison prévue :</strong>"
+
+#. module: serel_product_advised_price
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.report_delivery_document_inherit
+msgid "<strong>Destination Package</strong>"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.report_saleorder_document_inherit
+msgid "<strong>Expiration:</strong>"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.report_saleorder_document_inherit
+msgid "<strong>Order Date:</strong>"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.report_saleorder_document_inherit
+msgid "<strong>Quotation Date:</strong>"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.report_saleorder_document_inherit
+msgid "<strong>Salesperson:</strong>"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.report_saleorder_document_inherit
+msgid "<strong>Your Reference:</strong>"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.serel_product_pricelist_view_form
+msgid "Advised"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model:ir.model.fields,field_description:serel_product_advised_price.field_product_product__advised_sale_price
+#: model:ir.model.fields,field_description:serel_product_advised_price.field_product_template__advised_sale_price
+#: model:ir.model.fields,field_description:serel_product_advised_price.field_sale_order_line__advised_sale_price
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.serel_product_product_view_form
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.serel_product_product_view_tree
+msgid "Advised Sale Price"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.serel_template_sticker_1
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.serel_template_sticker_2
+msgid "Article:"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.serel_template_sticker_1
+msgid "Clef:"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model:ir.actions.server,name:serel_product_advised_price.action_compute_advised_price_product
+#: model:ir.actions.server,name:serel_product_advised_price.action_compute_advised_price_template
+msgid "Compute Advised Price"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model:ir.model,name:serel_product_advised_price.model_res_partner
+msgid "Contact"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model:ir.model.fields,field_description:serel_product_advised_price.field_tag_product_template__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model:ir.model.fields,field_description:serel_product_advised_price.field_tag_product_template__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model:ir.model.fields,field_description:serel_product_advised_price.field_product_product__product_tmpl_sequence
+#: model:ir.model.fields,field_description:serel_product_advised_price.field_product_template__product_tmpl_sequence
+msgid "Digits for Variant Sequence"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model:ir.model.fields,field_description:serel_product_advised_price.field_tag_product_template__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model:ir.model.fields,help:serel_product_advised_price.field_product_product__sequence
+#: model:ir.model.fields,help:serel_product_advised_price.field_product_template__sequence
+msgid "Gives the sequence order when displaying a product list"
+msgstr "Indique l'ordre d'affichage lorsqu'une liste d'articles est affichée."
+
+#. module: serel_product_advised_price
+#: model:ir.model.fields,field_description:serel_product_advised_price.field_tag_product_template__id
+msgid "ID"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model:ir.model.fields,field_description:serel_product_advised_price.field_product_template__default_code
+msgid "Internal Reference"
+msgstr "Référence interne"
+
+#. module: serel_product_advised_price
+#: model:ir.model.fields,field_description:serel_product_advised_price.field_product_pricelist__advised_pricelist
+msgid "Is The Advised Pricelist"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model:ir.model,name:serel_product_advised_price.model_account_move_line
+msgid "Journal Item"
+msgstr "Écriture comptable"
+
+#. module: serel_product_advised_price
+#: model:ir.model.fields,field_description:serel_product_advised_price.field_tag_product_template____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model:ir.model.fields,field_description:serel_product_advised_price.field_tag_product_template__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model:ir.model.fields,field_description:serel_product_advised_price.field_tag_product_template__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.serel_template_sticker_1
+msgid "Localisation:"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model:ir.model.fields,field_description:serel_product_advised_price.field_tag_product_template__name
+msgid "Name"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model:ir.model.fields,help:serel_product_advised_price.field_product_product__product_tmpl_sequence
+#: model:ir.model.fields,help:serel_product_advised_price.field_product_template__product_tmpl_sequence
+msgid "Number of Digits for the generated Product Variant Reference"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.report_invoice_document_inherit
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.serel_account_view_form
+msgid "Operation Intrastat"
+msgstr "Intrastat de l'opération"
+
+#. module: serel_product_advised_price
+#: model:ir.model.fields,field_description:serel_product_advised_price.field_product_product__pr_advised_sale_price
+msgid "Pr Advised Sale Price"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model:ir.model,name:serel_product_advised_price.model_product_pricelist
+msgid "Pricelist"
+msgstr "Liste de prix"
+
+#. module: serel_product_advised_price
+#: model:ir.model,name:serel_product_advised_price.model_product_product
+msgid "Product"
+msgstr "Produit"
+
+#. module: serel_product_advised_price
+#: model:ir.model.fields,field_description:serel_product_advised_price.field_account_move_line__intrastat_product_id
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.report_invoice_document_inherit
+msgid "Product Intrastat"
+msgstr "Intrastat Article"
+
+#. module: serel_product_advised_price
+#: model:ir.model,name:serel_product_advised_price.model_product_template
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.serel_advised_price_sale_order_line_form
+msgid "Product Template"
+msgstr "Modèle d'article"
+
+#. module: serel_product_advised_price
+#: model:ir.model.fields,field_description:serel_product_advised_price.field_tag_product_template__product_ids
+msgid "Products"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model:ir.model.fields,field_description:serel_product_advised_price.field_account_move_line__qty_integer
+#: model:ir.model.fields,field_description:serel_product_advised_price.field_sale_order_line__qty_integer
+msgid "Quantity in Integer"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.serel_template_sticker_2
+msgid "REF:"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.serel_template_sticker_3
+msgid "Reference:"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model:ir.model,name:serel_product_advised_price.model_sale_order
+msgid "Sales Order"
+msgstr "Bon de commande"
+
+#. module: serel_product_advised_price
+#: model:ir.model,name:serel_product_advised_price.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Ligne du bon de commande"
+
+#. module: serel_product_advised_price
+#: model:ir.model.fields,field_description:serel_product_advised_price.field_product_product__sequence
+#: model:ir.model.fields,field_description:serel_product_advised_price.field_product_template__sequence
+#: model:ir.model.fields,field_description:serel_product_advised_price.field_tag_product_template__sequence
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: serel_product_advised_price
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.serel_template_sticker_2
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.serel_template_sticker_3
+msgid "Serel Logo"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model:ir.model.fields,field_description:serel_product_advised_price.field_account_move_line__show_in_report
+#: model:ir.model.fields,field_description:serel_product_advised_price.field_sale_order_line__show_in_report
+msgid "Show in Report"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model:ir.model.fields,field_description:serel_product_advised_price.field_product_product__sticker_label
+#: model:ir.model.fields,field_description:serel_product_advised_price.field_product_template__sticker_label
+msgid "Sticker Label"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model:ir.actions.report,name:serel_product_advised_price.product_product_stickers_report_1
+#: model:ir.actions.report,name:serel_product_advised_price.product_template_stickers_report_1
+msgid "Stickers 1"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model:ir.actions.report,name:serel_product_advised_price.product_product_stickers_report_1_zpl
+#: model:ir.actions.report,name:serel_product_advised_price.product_template_stickers_report_1_zpl
+msgid "Stickers 1 (ZPL)"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model:ir.actions.report,name:serel_product_advised_price.product_template_stickers_report_2
+msgid "Stickers 2"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model:ir.actions.report,name:serel_product_advised_price.product_product_stickers_report_3
+#: model:ir.actions.report,name:serel_product_advised_price.product_template_stickers_report_3
+msgid "Stickers 3"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.serel_tag_product_view_form
+msgid "Tag Product"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.serel_tag_product_view_tree
+msgid "Tag Products"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model:ir.model.fields,field_description:serel_product_advised_price.field_product_product__tag_product_ids
+#: model:ir.model.fields,field_description:serel_product_advised_price.field_product_template__tag_product_ids
+#: model:ir.model.fields,field_description:serel_product_advised_price.field_sale_order__tag_ids
+msgid "Tags"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model:ir.actions.act_window,name:serel_product_advised_price.serel_tag_product_action
+#: model:ir.ui.menu,name:serel_product_advised_price.menu_serel_tag_product
+msgid "Tags For The Products"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model:ir.model,name:serel_product_advised_price.model_tag_product_template
+msgid "Tags for the products"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model:ir.model.constraint,message:serel_product_advised_price.constraint_product_product_unique_default_code
+#: model:ir.model.constraint,message:serel_product_advised_price.constraint_product_template_unique_default_code
+msgid "This reference already exists!"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.serel_product_tmpl_advised_price_view_form
+msgid "Update Advised Price"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: code:addons/serel_product_advised_price/models/serel_product_pricelist.py:0
+#, python-format
+msgid ""
+"You cannot have more than one pricelist with the flag 'Advised Pricelist' "
+"set to True"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.serel_template_sticker_1_zpl
+msgid ""
+"^FS\n"
+"                    ^FO0,140^GB490,1,3^FS\n"
+"\n"
+"                    ^FX Third section with the product name.\n"
+"                    ^CF0,20\n"
+"                    ^FO210,160^FDArticle:^FS\n"
+"                    ^FO370,160^FD"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.serel_template_sticker_1_zpl
+msgid ""
+"^FS\n"
+"                    ^FO0,220^GB700,1,3^FS\n"
+"\n"
+"                    ^FX Fourth section with Lot/SN.\n"
+"                    ^CF0,20\n"
+"                    ^FO210,160^FDLot/SN:^FS"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.serel_template_sticker_1_zpl
+msgid ""
+"^FS\n"
+"                    ^FO0,80^GB700,1,3^FS\n"
+"\n"
+"                    ^FX Second section with location.\n"
+"                    ^CF0,20\n"
+"                    ^FO210,90^FDLocation:^FS\n"
+"                    ^FO370,90^FD"
+msgstr ""
+
+#. module: serel_product_advised_price
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.serel_template_sticker_1_zpl
+msgid ""
+"^XA\n"
+"\n"
+"                    ^FX Top section with product reference.\n"
+"                    ^CF0,20\n"
+"                    ^FO210,20^FDReference:^FS\n"
+"                    ^FO370,20^FD"
+msgstr ""

@@ -25,6 +25,10 @@
                     <strong>Expiration:</strong>
                     <p class="m-0" t-field="doc.validity_date"/>
                 </div>
+                <div t-if="doc.commitment_date" class="col-3">
+                    <strong>Delivery Date:</strong>
+                    <p class="m-0" t-field="doc.commitment_date" t-options="{&quot;widget&quot;: &quot;date&quot;}"/>
+                </div>
                 <div t-if="doc.user_id.name" class="col-3">
                     <strong>Salesperson:</strong>
                     <p class="m-0" t-field="doc.user_id"/>

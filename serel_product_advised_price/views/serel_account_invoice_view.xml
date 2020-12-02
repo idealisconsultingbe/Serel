@@ -9,6 +9,18 @@
                 <xpath expr="//field[@name='invoice_line_ids']/tree//field[@name='price_unit']" position="after">
                     <field name="show_in_report" optional="show"/>
                 </xpath>
+                <xpath expr="//field[@name='invoice_line_ids']/tree//field[@name='intrastat_transaction_id']" position="attributes">
+                    <attribute name="string">Operation Intrastat</attribute>
+                </xpath>
+                <xpath expr="//field[@name='invoice_line_ids']/form//field[@name='intrastat_transaction_id']" position="attributes">
+                    <attribute name="string">Operation Intrastat</attribute>
+                </xpath>
+                <xpath expr="//field[@name='invoice_line_ids']/tree//field[@name='intrastat_transaction_id']" position="after">
+                    <field name="intrastat_product_id" optional="show" context="{                                 'search_view_ref': 'account_intrastat.view_intrastat_code_restricted_type_search',                                 'form_view_ref': 'account_intrastat.view_intrastat_code_restricted_type_form',                                 'default_type': 'commodity'}"/>
+                </xpath>
+                <xpath expr="//field[@name='invoice_line_ids']/form//field[@name='intrastat_transaction_id']" position="after">
+                    <field name="intrastat_product_id" context="{                             'search_view_ref': 'account_intrastat.view_intrastat_code_restricted_type_search',                             'form_view_ref': 'account_intrastat.view_intrastat_code_restricted_type_form',                             'default_type': 'commodity'}"/>
+                </xpath>
             </field>
         </record>
     </data>

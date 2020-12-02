@@ -8,6 +8,8 @@ class SerelAccountMoveLine(models.Model):
 
     show_in_report = fields.Boolean(string='Show in Report', default=True)
     qty_integer = fields.Integer(string='Quantity in Integer', compute='_compute_qty_integer', store=True)
+    intrastat_product_id = fields.Many2one('account.intrastat.code', string='Product Intrastat',
+                                           related='product_id.intrastat_id')
 
     @api.depends('quantity')
     def _compute_qty_integer(self):
