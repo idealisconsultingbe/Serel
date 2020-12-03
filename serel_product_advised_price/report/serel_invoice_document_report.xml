@@ -23,6 +23,7 @@
         <xpath expr="//th[3]" position="before">
             <th class="text-right">Operation Intrastat</th>
             <th class="text-right">Product Intrastat</th>
+            <th class="text-right">Weight(kg)</th>
         </xpath>
         <xpath expr="//td[2]" position="before">
             <td class="text-right">
@@ -30,6 +31,9 @@
             </td>
             <td class="text-right">
                 <span t-field="line.intrastat_product_id"/>
+            </td>
+            <td class="text-right">
+                <span t-field="line.weight"/>
             </td>
         </xpath>
     </template>
