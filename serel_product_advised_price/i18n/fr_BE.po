@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 13.0+e\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-02 19:19+0000\n"
-"PO-Revision-Date: 2020-12-02 20:20+0100\n"
+"POT-Creation-Date: 2020-12-11 12:27+0000\n"
+"PO-Revision-Date: 2020-12-11 13:40+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -50,32 +50,37 @@ msgstr ""
 #. module: serel_product_advised_price
 #: model_terms:ir.ui.view,arch_db:serel_product_advised_price.report_saleorder_document_inherit
 msgid "<strong>Expiration:</strong>"
-msgstr ""
+msgstr "<strong>Expiration :</strong>"
 
 #. module: serel_product_advised_price
 #: model_terms:ir.ui.view,arch_db:serel_product_advised_price.report_saleorder_document_inherit
 msgid "<strong>Order Date:</strong>"
-msgstr ""
+msgstr "<strong>Date de commande:</strong>"
 
 #. module: serel_product_advised_price
 #: model_terms:ir.ui.view,arch_db:serel_product_advised_price.report_saleorder_document_inherit
 msgid "<strong>Quotation Date:</strong>"
-msgstr ""
+msgstr "<strong>Date du devis:</strong>"
 
 #. module: serel_product_advised_price
 #: model_terms:ir.ui.view,arch_db:serel_product_advised_price.report_saleorder_document_inherit
 msgid "<strong>Salesperson:</strong>"
-msgstr ""
+msgstr "<strong>Vendeur :</strong>"
+
+#. module: serel_product_advised_price
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.report_saleorder_document_inherit
+msgid "<strong>Serel Confirm Date:</strong>"
+msgstr "<strong>Date de la confirmation par Serel:</strong>"
 
 #. module: serel_product_advised_price
 #: model_terms:ir.ui.view,arch_db:serel_product_advised_price.report_saleorder_document_inherit
 msgid "<strong>Your Reference:</strong>"
-msgstr ""
+msgstr "<strong>Votre référence:</strong>"
 
 #. module: serel_product_advised_price
 #: model_terms:ir.ui.view,arch_db:serel_product_advised_price.serel_product_pricelist_view_form
 msgid "Advised"
-msgstr ""
+msgstr "Conseillé"
 
 #. module: serel_product_advised_price
 #: model:ir.model.fields,field_description:serel_product_advised_price.field_product_product__advised_sale_price
@@ -84,7 +89,7 @@ msgstr ""
 #: model_terms:ir.ui.view,arch_db:serel_product_advised_price.serel_product_product_view_form
 #: model_terms:ir.ui.view,arch_db:serel_product_advised_price.serel_product_product_view_tree
 msgid "Advised Sale Price"
-msgstr ""
+msgstr "Prix de Vente conseillé"
 
 #. module: serel_product_advised_price
 #: model_terms:ir.ui.view,arch_db:serel_product_advised_price.serel_template_sticker_1
@@ -111,12 +116,12 @@ msgstr ""
 #. module: serel_product_advised_price
 #: model:ir.model.fields,field_description:serel_product_advised_price.field_tag_product_template__create_uid
 msgid "Created by"
-msgstr ""
+msgstr "Créé par"
 
 #. module: serel_product_advised_price
 #: model:ir.model.fields,field_description:serel_product_advised_price.field_tag_product_template__create_date
 msgid "Created on"
-msgstr ""
+msgstr "Créé le"
 
 #. module: serel_product_advised_price
 #: model:ir.model.fields,field_description:serel_product_advised_price.field_product_product__product_tmpl_sequence
@@ -127,7 +132,7 @@ msgstr ""
 #. module: serel_product_advised_price
 #: model:ir.model.fields,field_description:serel_product_advised_price.field_tag_product_template__display_name
 msgid "Display Name"
-msgstr ""
+msgstr "Nom affiché"
 
 #. module: serel_product_advised_price
 #: model:ir.model.fields,help:serel_product_advised_price.field_product_product__sequence
@@ -158,17 +163,17 @@ msgstr "Écriture comptable"
 #. module: serel_product_advised_price
 #: model:ir.model.fields,field_description:serel_product_advised_price.field_tag_product_template____last_update
 msgid "Last Modified on"
-msgstr ""
+msgstr "Dernière modification le"
 
 #. module: serel_product_advised_price
 #: model:ir.model.fields,field_description:serel_product_advised_price.field_tag_product_template__write_uid
 msgid "Last Updated by"
-msgstr ""
+msgstr "Dernière mise à jour par"
 
 #. module: serel_product_advised_price
 #: model:ir.model.fields,field_description:serel_product_advised_price.field_tag_product_template__write_date
 msgid "Last Updated on"
-msgstr ""
+msgstr "Dernière mise à jour le"
 
 #. module: serel_product_advised_price
 #: model_terms:ir.ui.view,arch_db:serel_product_advised_price.serel_template_sticker_1
@@ -178,7 +183,7 @@ msgstr ""
 #. module: serel_product_advised_price
 #: model:ir.model.fields,field_description:serel_product_advised_price.field_tag_product_template__name
 msgid "Name"
-msgstr ""
+msgstr "Nom"
 
 #. module: serel_product_advised_price
 #: model:ir.model.fields,help:serel_product_advised_price.field_product_product__product_tmpl_sequence
@@ -187,10 +192,19 @@ msgid "Number of Digits for the generated Product Variant Reference"
 msgstr ""
 
 #. module: serel_product_advised_price
-#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.report_invoice_document_inherit
 #: model_terms:ir.ui.view,arch_db:serel_product_advised_price.serel_account_view_form
 msgid "Operation Intrastat"
 msgstr "Intrastat de l'opération"
+
+#. module: serel_product_advised_price
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.report_invoice_document_inherit
+msgid "Operation Intrastat Code"
+msgstr "Code Intrastat de l'opération"
+
+#. module: serel_product_advised_price
+#: model:ir.model.fields,field_description:serel_product_advised_price.field_sale_order__serel_order_date
+msgid "Order Date"
+msgstr "Date de la commande"
 
 #. module: serel_product_advised_price
 #: model:ir.model.fields,field_description:serel_product_advised_price.field_product_product__pr_advised_sale_price
@@ -209,9 +223,13 @@ msgstr "Produit"
 
 #. module: serel_product_advised_price
 #: model:ir.model.fields,field_description:serel_product_advised_price.field_account_move_line__intrastat_product_id
-#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.report_invoice_document_inherit
 msgid "Product Intrastat"
 msgstr "Intrastat Article"
+
+#. module: serel_product_advised_price
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.report_invoice_document_inherit
+msgid "Product Intrastat Code"
+msgstr "Code Intrastat de l'article"
 
 #. module: serel_product_advised_price
 #: model:ir.model,name:serel_product_advised_price.model_product_template
@@ -222,13 +240,13 @@ msgstr "Modèle d'article"
 #. module: serel_product_advised_price
 #: model:ir.model.fields,field_description:serel_product_advised_price.field_tag_product_template__product_ids
 msgid "Products"
-msgstr ""
+msgstr "Articles"
 
 #. module: serel_product_advised_price
 #: model:ir.model.fields,field_description:serel_product_advised_price.field_account_move_line__qty_integer
 #: model:ir.model.fields,field_description:serel_product_advised_price.field_sale_order_line__qty_integer
 msgid "Quantity in Integer"
-msgstr ""
+msgstr "Quantité en Entier"
 
 #. module: serel_product_advised_price
 #: model_terms:ir.ui.view,arch_db:serel_product_advised_price.serel_template_sticker_2
@@ -238,7 +256,7 @@ msgstr ""
 #. module: serel_product_advised_price
 #: model_terms:ir.ui.view,arch_db:serel_product_advised_price.serel_template_sticker_3
 msgid "Reference:"
-msgstr ""
+msgstr "Référence :"
 
 #. module: serel_product_advised_price
 #: model:ir.model,name:serel_product_advised_price.model_sale_order
@@ -256,6 +274,11 @@ msgstr "Ligne du bon de commande"
 #: model:ir.model.fields,field_description:serel_product_advised_price.field_tag_product_template__sequence
 msgid "Sequence"
 msgstr "Séquence"
+
+#. module: serel_product_advised_price
+#: model:ir.model.fields,field_description:serel_product_advised_price.field_sale_order__date_order
+msgid "Serel Confirm Date"
+msgstr "Date de la confirmation par Serel"
 
 #. module: serel_product_advised_price
 #: model_terms:ir.ui.view,arch_db:serel_product_advised_price.serel_template_sticker_2
@@ -330,12 +353,22 @@ msgstr ""
 #: model:ir.model.constraint,message:serel_product_advised_price.constraint_product_product_unique_default_code
 #: model:ir.model.constraint,message:serel_product_advised_price.constraint_product_template_unique_default_code
 msgid "This reference already exists!"
-msgstr ""
+msgstr "Cette référence existe déjà!"
 
 #. module: serel_product_advised_price
 #: model_terms:ir.ui.view,arch_db:serel_product_advised_price.serel_product_tmpl_advised_price_view_form
 msgid "Update Advised Price"
 msgstr ""
+
+#. module: serel_product_advised_price
+#: model:ir.model.fields,field_description:serel_product_advised_price.field_account_move_line__weight
+msgid "Weight"
+msgstr "Poids"
+
+#. module: serel_product_advised_price
+#: model_terms:ir.ui.view,arch_db:serel_product_advised_price.report_invoice_document_inherit
+msgid "Weight(kg)"
+msgstr "Poids(kg)"
 
 #. module: serel_product_advised_price
 #: code:addons/serel_product_advised_price/models/serel_product_pricelist.py:0

@@ -40,4 +40,6 @@ class SaleOrder(models.Model):
     _inherit = 'sale.order'
 
     tag_ids = fields.Many2many('res.partner.category', column1='order_id', column2='category_id', string='Tags')
+    serel_order_date = fields.Date(string='Order Date')
+    date_order = fields.Date(string='Serel Confirm Date')
 

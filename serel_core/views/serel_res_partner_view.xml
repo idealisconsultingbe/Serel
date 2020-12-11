@@ -12,6 +12,10 @@
                 <xpath expr="//page[@name='sales_purchases']//field[@name='user_id']" position="attributes">
                     <attribute name="domain">[('id', '=', available_salesperson)]</attribute>
                 </xpath>
+                <xpath expr="//field[@name='child_ids']/form/sheet/field[@name='lang']" position="replace"/>
+                <xpath expr="//field[@name='child_ids']/form/sheet/group/group/field[@name='company_id']" position="after">
+                    <field name="lang"/>
+                </xpath>
             </field>
         </record>
     </data>
